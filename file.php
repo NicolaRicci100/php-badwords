@@ -1,6 +1,14 @@
 <?php
+//parola inserita dall'utente
 $word = $_GET['word'];
+//parola censurata
+$censored_word = str_replace($word, '* * *', $word);
+//lunghezza della parola
+$lenght_word = strlen($word);
+//paragrafo scritto dall'utente
 $paragraph = $_GET['paragraph'];
+//lunghezza paragrafo
+$lenght_paragraph = strlen($paragraph);
 ?>
 
 
@@ -14,13 +22,13 @@ $paragraph = $_GET['paragraph'];
   <title>badwords</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
 </head>
 
-<body>
-  <h2>la parola è <?= $word ?></h2>
-  <h2>il paragrafo è <?= $paragraph ?></h2>
+<body class="bg-light">
+  <div class="container text-center mt-5">
+    <h2>La parola è <span class="text-warning"><?= $censored_word ?></span> e il numero di cratteri è <span class="text-warning"><?= $lenght_word ?></span></h2>
+    <h2>Il paragrafo è <span class="text-warning"><?= $paragraph ?></span> e il numero di cratteri è <span class="text-warning"><?= $lenght_paragraph ?></span></h2>
+  </div>
 </body>
 
 </html>

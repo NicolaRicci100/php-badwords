@@ -26,7 +26,7 @@ $lenght_paragraph = mb_strlen($censored_paragraph);
 
 <body class="bg-light">
   <div class="container text-center mt-5">
-    <h2>La parola è <span class="text-warning"><?= $word ?></span> e il numero di cratteri è <span class="text-warning"><?= $lenght_word ?></span></h2>
+    <h2>La parola è <span class="text-warning"><?= $word ?></span> e il numero di caratteri è <span class="text-warning"><?= $lenght_word ?></span></h2>
     <h2>Il nuovo paragrafo è <span class="text-warning"><?= $censored_paragraph ?></span> e il numero di caratteri è <span class="text-warning"><?= $lenght_paragraph ?></span></h2>
   </div>
 </body>

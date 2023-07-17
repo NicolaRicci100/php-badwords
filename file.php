@@ -1,14 +1,14 @@
 <?php
-//parola inserita dall'utente
+//parola da censurare
 $word = $_GET['word'];
-//parola censurata
-$censored_word = str_replace($word, '* * *', $word);
 //lunghezza della parola
-$lenght_word = strlen($word);
+$lenght_word = mb_strlen($word);
 //paragrafo scritto dall'utente
 $paragraph = $_GET['paragraph'];
-//lunghezza paragrafo
-$lenght_paragraph = strlen($paragraph);
+//paragrafo censurato
+$censored_paragraph = str_replace($word, '***', $paragraph);
+//lunghezza paragrafo censurato
+$lenght_paragraph = mb_strlen($censored_paragraph);
 ?>
 
 
@@ -26,8 +26,8 @@ $lenght_paragraph = strlen($paragraph);
 
 <body class="bg-light">
   <div class="container text-center mt-5">
-    <h2>La parola è <span class="text-warning"><?= $censored_word ?></span> e il numero di cratteri è <span class="text-warning"><?= $lenght_word ?></span></h2>
-    <h2>Il paragrafo è <span class="text-warning"><?= $paragraph ?></span> e il numero di cratteri è <span class="text-warning"><?= $lenght_paragraph ?></span></h2>
+    <h2>La parola è <span class="text-warning"><?= $word ?></span> e il numero di cratteri è <span class="text-warning"><?= $lenght_word ?></span></h2>
+    <h2>Il nuovo paragrafo è <span class="text-warning"><?= $censored_paragraph ?></span> e il numero di caratteri è <span class="text-warning"><?= $lenght_paragraph ?></span></h2>
   </div>
 </body>
 
